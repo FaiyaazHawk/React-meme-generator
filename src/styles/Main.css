@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+.Main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    border-radius: 5px;
+}
+
+.Main--button {
+    grid-column: 1 / -1;
+}

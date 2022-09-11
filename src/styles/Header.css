@@ -1,0 +1,19 @@
+.Header {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    padding: 15px;
+    margin: 10px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 20%, rgba(8,7,7,1) 90%);
+    justify-content: space-around;
+}
+
+.Header--image {
+    height: 60px;
+    
+}
+
+.Header--title {
+    color: white;
+}
