@@ -7,8 +7,45 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     border-radius: 5px;
+    width: 100%;
 }
 
 .Main--button {
     grid-column: 1 / -1;
+}
+
+.meme {
+    font-family: Arial, Helvetica, sans-serif;
+    color: antiquewhite;
+    width: fit-content;
+    position: relative;
+    width: 100%
+}
+
+.meme--image {
+    width: 50vw;
+}
+
+.meme--toptext {
+    position: absolute;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    left: 20%;
+    top: 0;
+    width:80%;
+    color: #FFFFFF;
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+}
+
+.meme--bottomtext {
+    position: absolute;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    left: 20%;
+    top: 75%;
+    width:80%;
+    color: #FFFFFF;
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
 }

@@ -6,8 +6,8 @@ function Main () {
     //States
     const [memesArray, setMemesArray] = React.useState([]);
     const [meme, setMeme] = React.useState({
-        topText: "",
-        bottomText: "",
+        topText: "One does not simply",
+        bottomText: "change career in a recession",
         image: "http://i.imgflip.com/1bij.jpg"
     })
 
@@ -15,7 +15,6 @@ function Main () {
 
 
     React.useEffect(() => {
-        console.log("Effect ran")
         fetch("https://api.imgflip.com/get_memes")
         .then(res => res.json())
         .then(data => setMemesArray(data.data.memes))
@@ -30,7 +29,13 @@ function Main () {
         }))
     }
 
-    
+    function handleChange(event) {
+        const {name, value} = event.target
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
+        }))
+    }
 
 
 
@@ -40,10 +45,29 @@ function Main () {
 
     return (
         <div className="Main">
-            <input type='text' placeholder="Top Text"></input>
-            <input type='text' placeholder="Bottom Text"></input>
+            <input 
+            type='text' 
+            placeholder="Top Text"
+            name="topText"
+            value={meme.topText}
+            onChange={handleChange}
+            ></input>
+
+            <input 
+            type='text' 
+            placeholder="Bottom Text"
+            name="bottomText"
+            value={meme.bottomText}
+            onChange={handleChange}
+            ></input>
+
             <button onClick={getUrl} className="Main--button">Get A New Meme Image</button>
-            <img src={meme.image} alt="memeimage"></img>
+            <div className="meme">
+                <img className="meme--image" src={meme.image} alt="memeimage"></img>
+                <h2 className="meme--toptext">{meme.topText}</h2>
+                <h2 className="meme--bottomtext">{meme.bottomText}</h2>
+            </div>
+            
         </div>
     )
 }
